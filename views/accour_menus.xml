@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <menuitem id="accour_menus_root" name="Accour Report" web_icon="accour,static/description/icon.png">
+        <menuitem id="test_first_level_menu" name="PDF">
+            <menuitem id="accour_menu_action" action="accour_pdf_action"/>
+        </menuitem>
+    </menuitem>
+
+</odoo>

@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data noupdate="1">
+		<template id="accour_report">
+			<t t-call="web.html_container">
+				<t t-call="web.basic_layout">
+					<t t-foreach="docs" t-as="o">
+						<div class="page">
+							<style>
+								.black-header{
+								background: black;
+								color: white;
+								font-size: 20px;
+								word-spacing: 20px;
+								display: flex; display: -webkit-box; -webkit-box-pack: center; justify-content: center;
+								}
+								#table-content table th{
+								background: black;
+								color: white;
+								font-size: 16px;
+								text-align: center;
+								font-weight: 500 !important;
+								}
+								.font-12{
+								font-size:12px;
+								font-weight: 500 !important;
+								}
+								.b-font-14{
+								font-size:16px;
+								font-weight: 700 !important;
+								}
+								.b-font-18{
+								font-size: 20px;
+								font-weight: 700 !important;
+								}
+								.font-14{
+								font-size:16px;
+								font-weight: 500 !important;
+								}
+								.white-header{
+								font-size: 14px;
+								display: flex; display: -webkit-box; -webkit-box-pack: center; justify-content: center;
+								}
+							</style>
+							<header>
+								<div class="row">
+									<div class="col-4">
+										<img src="/accour/static/description/logo.png" alt="" style="height:60px;" />
+									</div>
+									<div class="col-4 lh-1">
+										<div class="b-font-14">
+											ACCUOR Nutritional Water Ltd.
+										</div>
+										<div class="font-12">
+											1st. Floor, Norwich House Savile Street
+										</div>
+										<div class="font-12">
+											HULL, E Riding of York HU1 3ES, Great Britain
+										</div>
+										<div class="font-12">
+											UK: +44 800 520 01 52 - Toll Free
+										</div>
+									</div>
+									<div class="col-4 lh-1">
+										<div class="b-font-14">
+											VAT number GB360842794 UK
+										</div>
+										<div class="font-12">
+											VAT number XI360842794 Northern Ireland
+										</div>
+										<div class="font-12">
+											VAT number N0234348A España
+										</div>
+										<div class="font-12">
+											VAT number N0234348A España
+										</div>
+									</div>
+								</div>
+							</header>
+							<div id="content" style="margin-top:3rem!important;">
+								<div class="black-header p-2">
+									P R E S U P U E S T O
+								</div>
+								<div class="row lh-sm" style="margin-top:2.5rem!important;">
+									<div class="col-5">
+										<div>
+											<span class="b-font-18">
+												Factura:
+											</span>
+											<span t-field="o.budget" class="font-14 mx-2" />
+										</div>
+										<div>
+											<span class="b-font-18">
+												Referencia:
+											</span>
+											<span t-field="o.reference" class="font-14 mx-2" />
+										</div>
+										<div>
+											<span class="font-14 fw-bold">
+												Número de presupuesto
+											</span>
+											<span t-field="o.id" class="font-14 mx-2" />
+										</div>
+										<div>
+											<span class="font-14 fw-bold">
+												Fecha
+											</span>
+											<span t-field="o.date" class="font-14 mx-2" />
+										</div>
+										<div>
+											<span class="font-14 fw-bold">
+												Importe
+											</span>
+											<span t-field="o.amount" class="font-14 mx-2" />
+										</div>
+										<div>
+											<span class="font-14 fw-bold">
+												Fecha de vencimiento
+											</span>
+											<span t-field="o.expiration_date" class="font-14 mx-2" />
+										</div>
+										<div>
+											<span class="font-14 fw-bold">
+												Forma de pago
+											</span>
+											<span t-field="o.form_of_payment" class="font-14 mx-2 fw-bold" />
+										</div>
+									</div>
+									<div class="col-7">
+										<div>
+											<span class="b-font-18">
+												bulthaup Girona - Leopold Bautista S.L.
+											</span>
+										</div>
+										<div>
+											<span class="font-14 mx-2">
+												Código de cliente: ACC59
+											</span>
+										</div>
+										<div>
+											<span class="font-14 mx-2">
+												C/. Barcelona, 16 E
+											</span>
+										</div>
+										<div>
+											<span class="font-14 mx-2">
+												17002-Girona
+											</span>
+										</div>
+										<div>
+											<span class="font-14 mx-2">
+												Barcelona [Barcelona], España
+											</span>
+										</div>
+										<div>
+											<span class="font-14 mx-2">
+												CIF: B17736976
+											</span>
+										</div>
+										<div>
+											<span class="font-14 mx-2">
+												Tel: +34 972 414 248
+											</span>
+										</div>
+										<div>
+											<span class="b-font-18">
+												Premium Store
+											</span>
+										</div>
+									</div>
+								</div>
+								<div style="margin-top:2.5rem!important;">
+									<p class="font-14 fw-bold m-0">
+										Dirección de envío
+									</p>
+									<p class="font-14">
+										C/. Barcelona, 16 E
+									</p>
+								</div>
+							</div>
+							<div id="table-content" style="margin-top:2.5rem!important">
+								<table class="table table-bordered" style="border-color:#000000!important;">
+									<thead>
+										<tr>
+											<th>
+												Pos
+											</th>
+											<th>
+												Código
+											</th>
+											<th>
+												Concepto
+											</th>
+											<th>
+												Tarifa
+											</th>
+											<th>
+												TarifaUds.
+											</th>
+											<th>
+												%Desc.
+											</th>
+											<th>
+												Neto
+											</th>
+											<th>
+												Total
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<t t-set="table_line_ids" t-value="o.table_data" />
+										<t t-foreach="table_line_ids" t-as="l">
+											<tr>
+												<td class="text-center" width="6%">
+													<t t-esc="l.pos" />
+												</td>
+												<td class="text-center" width="8%">
+													<t t-esc="l.code" />
+												</td>
+												<td class="text-center" width="50%">
+													<t t-esc="l.concept" />
+												</td>
+												<td class="text-end" width="8%">
+													<t t-esc="l.price" />
+												</td>
+												<td class="text-end" width="6%">
+													<t t-esc="l.uds" />
+												</td>
+												<td class="text-end" width="6%">
+													<t t-esc="l.discount" />
+												</td>
+												<td class="text-end" width="8%">
+													<t t-esc="l.net" />
+												</td>
+												<td class="text-end" width="8%">
+													<t t-esc="l.total" />
+												</td>
+											</tr>
+										</t>
+										<tr>
+											<td colspan="3">
+											</td>
+											<td class="text-end" colspan="4">
+												Subtotal
+											</td>
+											<td class="text-end">
+												<t t-esc="o.sub_total" />
+											</td>
+										</tr>
+										<tr>
+											<td colspan="3">
+											</td>
+											<td class="text-end" colspan="4">
+												Cargos
+											</td>
+											<td class="text-end">
+												<t t-esc="o.charges" />
+											</td>
+										</tr>
+										<tr>
+											<td colspan="3">
+											</td>
+											<td class="text-end" colspan="4">
+												Otros descuentos*
+											</td>
+											<td class="text-end">
+												<t t-esc="o.other_discounts" />
+											</td>
+										</tr>
+										<tr>
+											<td colspan="3">
+											</td>
+											<td class="text-end" colspan="4">
+												Total
+											</td>
+											<td class="text-end">
+												<t t-esc="o.total_sum" />
+											</td>
+										</tr>
+										<tr>
+											<td colspan="3">
+											</td>
+											<td class="text-end" colspan="4">
+												Tax(21%)
+											</td>
+											<td class="text-end">
+												<t t-esc="o.tax" />
+											</td>
+										</tr>
+										<tr>
+											<td colspan="3">
+											</td>
+											<td class="text-end" colspan="4">
+												Pre-pago
+											</td>
+											<td class="text-end">
+												<t t-esc="o.pre_pay" />
+											</td>
+										</tr>
+										<tr>
+											<td colspan="3">
+											</td>
+											<td class="text-end" colspan="4" style="background-color: darkgray;">
+												TOTAL (€)
+											</td>
+											<td class="text-end" style="background-color: darkgray;">
+												<t t-esc="o.total_sum_tax" />
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="white-header" style="margin-top:2.0rem!important; word-spacing:15px!important;font-size:16px!important;">
+								C O N D I C I O N E S
+							</div>
+							<hr style="height:2px;color:black;" />
+							<div class="white-header mt-4 text-center" style="word-spacing:0px!important">
+								Podrá realizar el pago mediante transferencia internacional al IBAN: GB65 REVO 0099 6905 7893 05 - BIC: REVOGB21
+							</div>
+							<div class="white-header mt-4" style="word-spacing:0px!important">
+								GLN 5065007030011 Support Warehouse Catalonia
+							</div>
+							<div class="text-center" style="position: absolute; top: 1300px;margin-left:50px!important;">
+								<div class="white-header fw-bold" style="word-spacing: 0px !important;">
+									Si está satisfecho con nuestro servicio, recomiéndenos! Sería el mejor cumplido!
+								</div>
+								<div class="white-header" style="word-spacing: 0px !important;">
+									Accuor Nutritional Water | 20-22 Wenlock Rd, Hoxton | London | England | Reino Unido-N1 7GU | Tel: +34900808697
+								</div>
+								<div class="white-header" style="word-spacing: 0px !important;">
+									hello@accuor.com | www.accuor.com
+								</div>
+							</div>
+						</div>
+					</t>
+				</t>
+			</t>
+		</template>
+	</data>
+</odoo>
